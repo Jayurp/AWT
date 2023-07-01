@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        var sum, sub, div, mul;
+
+        function Sum()
+        {
+            var ele1 = document.getElementById("num1");
+            var ele2 = document.getElementById("num2");
+
+            if(isNaN(ele1.value))
+            {
+                var warn1 = document.getElementById("warn1");
+                var warn2 = document.getElementById("warn2");
+                warn1.innerHTML = "*Not a number.";
+                document.getElementById("warn1").style.color = "red";
+            }
+            else if(isNaN(ele2.value))
+            {
+                var warn1 = document.getElementById("warn1");
+                var warn2 = document.getElementById("warn2");
+                warn2.innerHTML = "*Not a number.";
+                document.getElementById("warn2").style.color = "red";
+            }
+            else
+            {
+                var val1 = parseInt(ele1.value);
+                var val2 = parseInt(ele2.value);
+                sum = val1 + val2;
+                var span = document.getElementById("sum");
+                span.innerHTML = "";
+                span.append(sum);
+            }
+        }
+
+        function Sub()
+        {
+            var ele1 = document.getElementById("num1");
+            var ele2 = document.getElementById("num2");
+
+            if(isNaN(ele1.value))
+            {
+                var warn1 = document.getElementById("warn1");
+                var warn2 = document.getElementById("warn2");
+                warn1.innerHTML = "*Not a number.";
+                document.getElementById("warn1").style.color = "red";
+            }
+            else if(isNaN(ele2.value))
+            {
+                var warn1 = document.getElementById("warn1");
+                var warn2 = document.getElementById("warn2");
+                warn2.innerHTML = "*Not a number.";
+                document.getElementById("warn2").style.color = "red";
+            }
+            else
+            {
+ 
+                var val1 = parseInt(ele1.value);
+                var val2 = parseInt(ele2.value);
+                sub = val1-val2;
+                var span = document.getElementById("sub");
+                span.innerHTML = "";
+                span.append(sub);
+            }
+        }
+
+        function Div()
+        {
+            var ele1 = document.getElementById("num1");
+            var ele2 = document.getElementById("num2");
+            if(isNaN(ele1.value))
+            {
+                var warn1 = document.getElementById("warn1");
+                var warn2 = document.getElementById("warn2");
+                warn1.innerHTML = "*Not a number.";
+                document.getElementById("warn1").style.color = "red";
+            }
+            else if(isNaN(ele2.value))
+            {
+                var warn1 = document.getElementById("warn1");
+                var warn2 = document.getElementById("warn2");
+                warn2.innerHTML = "*Not a number.";
+                document.getElementById("warn2").style.color = "red";
+            }
+            else
+            {
+                var val1 = parseInt(ele1.value);
+                var val2 = parseInt(ele2.value);
+                div = val1/val2;
+                var span = document.getElementById("div");
+                span.innerHTML = "";
+                span.append(div);
+            }
+        }
+        function Mul()
+        {
+            var ele1 = document.getElementById("num1");
+            var ele2 = document.getElementById("num2");
+            if(isNaN(ele1.value))
+            {
+                var warn1 = document.getElementById("warn1");
+                var warn2 = document.getElementById("warn2");
+                warn1.innerHTML = "*Not a number.";
+                document.getElementById("warn1").style.color = "red";
+            }
+            else if(isNaN(ele2.value))
+            {
+                var warn1 = document.getElementById("warn1");
+                var warn2 = document.getElementById("warn2");
+                warn2.innerHTML = "*Not a number.";
+                document.getElementById("warn2").style.color = "red";
+            }
+            else
+            {
+                var val1 = parseInt(ele1.value);
+                var val2 = parseInt(ele2.value);
+                mul = val1*val2;
+                var span = document.getElementById("mul");
+                span.innerHTML = "";
+                span.append(mul);
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <input type="text" id="num1"/ onblur="Sum();Sub();Div();Mul()"><span id="warn1"></span>
+        <br>
+        <br>
+        <input type="text" id="num2"/><span id="warn2" onblur="Sum();Sub();Div();Mul()"></span>
+        <br><br>
+        <p>
+            result: 
+            <br>
+                Sum:<label id="sum"></label> 
+                <br>
+                Sub:<label id="sub"></label>
+                <br>
+                Div:<label id="div"></label>
+                <br>
+                Mul:<label id="mul"></label>
+        </p>
+    </center>
+</body>
