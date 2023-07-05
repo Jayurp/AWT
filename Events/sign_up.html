@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<body>
+    <div id="signUpForm">
+        <input type="text" id="name" placeholder="Name"/><span id="nameSpan"></span>
+        <br>
+        <input type="text" id="userName" placeholder="userName"/>
+        <br>
+        <input type="password" id="pass" placeholder="pass"/><span id="passSpan"></span>
+        <br>
+        <input type="password" id="conPass" placeholder="confirm pass"/>
+        <br>
+        <input type="radio" name="gender"/>Male
+        <br>
+        <input type="radio" name="gender"/>Female
+        <br>
+        <input type="number" id="phone" placeholder="phone"/><span id="phoneSpan"></span>
+        <br>
+        <input type="email" id="email" placeholder="email"/>
+        <br>
+        <select>
+            <option>
+                Gujarat
+            </option>
+            <option>
+                Uttar Pradesh
+            </option>
+            <option>
+                Goa
+            </option>
+        </select>
+        <br>
+        <input type="checkbox" id="agree"/>Agree?
+        <br>
+        <input type="submit" id="submitDetail"/>
+    </div>
+</body>
+<head>
+    <script>
+        var name = document.getElementById("name");
+        var uname = document.getElementById("userName");
+        var pass = document.getElementById("pass");
+        var conPass = document.getElementById("conPass");
+        var submit = document.getElementById("submitDetail");
+        var passSpan = document.getElementById("passSpan");
+        var phone = document.getElementById("phone");
+
+        if(submit != null)
+        {
+            submit.addEventListener("click", submitDetail);
+        }
+        else
+        {
+            console.log(submit);
+        }
+
+        function submitDetail(e)
+        {
+            passString = pass.value;
+
+            if(name)
+            {
+                var hasNumber = /\d/; 
+                console.log(hasNumber.test(name));
+            }
+
+
+            if(pass.value != conPass.value)
+            {
+                console.log("error");
+            }
+            else
+            {
+                if(pass.value.length < 6 || pass.value.length > 10)
+                {
+                    passSpan.innerHTML = "*Inappropriate Password";
+                    passSpan.style.color = "red";
+                }
+                else
+                {
+                    console.log(passString);
+                }
+            }
+
+            if(phone)
+            {
+                if(phone.value.lenght != 10)
+                {
+                    document.getElementById("phoneSpan").innerHTML = "*Invalid Number";
+                    document.getElementById("phoneSpan").style.color = "red";   
+                }
+            }
+            else
+            {
+                console.log(phone);
+            }
+        }
+    </script>
+</head>

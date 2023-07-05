@@ -29,6 +29,3 @@ var CSPIT = {
       console.log(key + ": " + CSPIT[key]);
       }
   }
-  
-  
-  
